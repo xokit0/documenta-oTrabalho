@@ -1,42 +1,107 @@
-body{
-    scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-}
-
-.navbar{
-    background-color: black;
-    overflow: hidden;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    padding-top: 60px; 
+  }
+  
+  /* NAVBAR */
+  .navbar {
     position: fixed;
     top: 0;
     width: 100%;
+    overflow-x: auto;
+    background-color: #ff5864;
+    display: flex;
+    white-space: nowrap;
     z-index: 1000;
-}
-
-.navbar a {
-    float: left;
-    display: block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .navbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  
+  .navbar a {
     color: white;
-    text-align: center;
-    padding: 14px 20px;
     text-decoration: none;
-}
-
-.navbar a:hover{
-    background-color: white;
-    color: black;
-}
-
-.section{
-    padding: 100px 20px;
-    height: 100vh;
-}
-
-.section h2{
-    text-align: center;
-}
-
-.spacer{
-    height: 60px;
-}
+    padding: 15px 20px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+    flex-shrink: 0;
+  }
+  
+  .navbar a:hover {
+    background-color: #e04852;
+  }
+  
+  /* Espaço para compensar o menu fixo */
+  .spacer {
+    height: 20px;
+  }
+  
+  /* SECTIONS */
+  .section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: gainsboro;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .section h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .section p,
+  .section ul,
+  .section li {
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  .section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .section {
+      padding: 30px 15px;
+    }
+  
+    .section h2 {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar a {
+      font-size: 0.95rem;
+      padding: 12px 16px;
+    }
+  
+    .section p,
+    .section li {
+      font-size: 0.95rem;
+    }
+  }
